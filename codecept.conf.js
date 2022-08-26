@@ -18,6 +18,10 @@ exports.config = {
       timeout: 20000,
       waitForTimeout: 10000,
       waitForNavigation: 'networkidle',
+      windowSize: '1920x1000',
+    },
+    "ChaiWrapper": {
+      require: "codeceptjs-chai"
     }
   },
   include: {
@@ -25,6 +29,7 @@ exports.config = {
     homePage: './pages/home.js',
     authPage: './pages/auth.js',
     createAccountPage: './pages/createAccount.js',
+    productPage: './pages/product.js',
   },
   bootstrap: null,
   mocha: {},

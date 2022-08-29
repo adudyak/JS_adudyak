@@ -18,7 +18,7 @@ console.log(arrayOfObjects);
 
 Feature('buy product');
 
-Before(({ I, homePage, authPage }) => { // or Background
+Before(({ I, homePage, authPage }) => {
     I.openStore();
     homePage.clickSignIn();
     authPage.login('210327042022@test.com', '.VhGDZ!wqiKy@59');
@@ -35,9 +35,3 @@ Data(products).Scenario('buy product', async ({ I, productPage, current }) => {
 Data(arrayOfObjects).Scenario('buy product', async ({ I, current }) => {
     console.log(current.productLink);
 }).tag('links');
-
-
-
-After(({ I }) => { // or Background
-    //I.openStore();
-});

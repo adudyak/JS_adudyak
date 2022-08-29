@@ -17,12 +17,18 @@ exports.config = {
       browser: 'chromium',
       timeout: 20000,
       waitForTimeout: 10000,
-      waitForNavigation: 'networkidle',
+      waitForNavigation: 'networkidle0',
       windowSize: '1920x1000',
     },
     "ChaiWrapper": {
       require: "codeceptjs-chai"
-    }
+    },
+    PriceConverter: {
+      require: './helpers/priceConverter.js',
+    },
+    EmailGenerator: {
+      require: './helpers/emailGenerator.js',
+    },
   },
   include: {
     I: './steps_file.js',
@@ -30,6 +36,7 @@ exports.config = {
     authPage: './pages/auth.js',
     createAccountPage: './pages/createAccount.js',
     productPage: './pages/product.js',
+    tryToHelper: './helpers/tryTo.js'
   },
   bootstrap: null,
   mocha: {},

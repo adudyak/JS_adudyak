@@ -9,8 +9,8 @@ array.push({ productLink: 'http://automationpractice.com/index.php?id_product=1&
 );
 */
 
-const FileReader = require('E:/Automation/GFL_stream2/JS_adudyak/helpers/fileReader.js');
-let productLinks = FileReader.readContectFromFile('E:/Automation/GFL_stream2/JS_adudyak/input/productLinks.txt');
+const FileReader = require('./../helpers/fileReader.js');
+let productLinks = FileReader.readContectFromFile('./input/productLinks.txt');
 let productLinksArray = productLinks.split('\r\n');
 console.log(productLinksArray);
 let arrayOfObjects = FileReader.getArrayOfProductLinkObjects(productLinksArray);

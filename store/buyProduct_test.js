@@ -34,4 +34,12 @@ Data(products).Scenario('buy product', async ({ I, productPage, current }) => {
 
 Data(arrayOfObjects).Scenario('buy product', async ({ I, current }) => {
     console.log(current.productLink);
+    I.grabTextFrom({ css: 'div.box '});
 }).tag('links');
+
+
+Scenario('api', async ({ I }) => {
+    let response = await I.sendGetRequest('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=USD&json');
+    I.seeResponseCodeIs(200);
+    console.log(response.data[0].rate);
+}).tag('api');
